@@ -28,7 +28,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2
+        ruby-version: 3.2.2
 
     - name: Install gems
       run: bundle install
@@ -40,3 +40,7 @@ jobs:
 
     - name: Run tests
       run: bundle exec rails test
+
+    - name: Run Rubocop
+      run: bundle exec rubocop
+      

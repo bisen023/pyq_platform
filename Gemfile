@@ -68,7 +68,6 @@ end
 
 gem "tailwindcss-rails", "~> 4.4"
 gem 'activeadmin'
-gem 'activeadmin'
 
 gem "devise", "~> 5.0"
 gem 'sassc-rails'
