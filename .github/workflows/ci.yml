@@ -15,7 +15,7 @@ jobs:
         ports: ['5432:5432']
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: "Server@123"
         options: >-
           --health-cmd="pg_isready"
           --health-interval=10s
@@ -35,7 +35,6 @@ jobs:
 
     - name: Setup DB
       run: |
-        cp config/database.yml config/database.yml
         bundle exec rails db:create db:schema:load
 
     - name: Run tests
