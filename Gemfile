@@ -71,3 +71,4 @@ gem 'activeadmin'
 
 gem "devise", "~> 5.0"
 gem 'sassc-rails'
+gem 'minitest', '~> 5.20'
