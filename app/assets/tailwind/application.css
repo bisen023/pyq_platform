@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-navy: #07111f;
+    --bg-ink: #0d1b2a;
+    --bg-panel: rgba(8, 20, 37, 0.72);
+    --bg-panel-strong: rgba(8, 20, 37, 0.9);
+    --border-soft: rgba(148, 163, 184, 0.18);
+    --text-main: #e5eefb;
+    --text-muted: #94a3b8;
+    --accent: #f8b84e;
+    --accent-strong: #f97316;
+    --accent-cool: #4fd1c5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--text-main);
+    background:
+      radial-gradient(circle at top left, rgba(79, 209, 197, 0.16), transparent 28%),
+      radial-gradient(circle at top right, rgba(249, 115, 22, 0.16), transparent 24%),
+      linear-gradient(135deg, var(--bg-navy) 0%, #10243a 45%, #1f3f5b 100%);
+  }
+}
+
+@layer components {
+  .app-shell {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .app-shell::before,
+  .app-shell::after {
+    content: "";
+    position: fixed;
+    inset: auto;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 9999px;
+    filter: blur(24px);
+    opacity: 0.22;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .app-shell::before {
+    top: 4rem;
+    left: -6rem;
+    background: rgba(79, 209, 197, 0.75);
+  }
+
+  .app-shell::after {
+    right: -7rem;
+    bottom: 6rem;
+    background: rgba(248, 184, 78, 0.68);
+  }
+
+  .glass-panel {
+    background: linear-gradient(180deg, rgba(12, 27, 46, 0.9), rgba(8, 20, 37, 0.72));
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 24px 80px rgba(2, 8, 23, 0.28);
+    backdrop-filter: blur(18px);
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 3vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .soft-label {
+    color: var(--accent);
+    background: rgba(248, 184, 78, 0.12);
+    border: 1px solid rgba(248, 184, 78, 0.2);
+  }
+}

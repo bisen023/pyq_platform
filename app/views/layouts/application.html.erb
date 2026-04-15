@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PyqPlatform</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+<body class="app-shell min-h-screen flex flex-col text-white selection:bg-amber-300/30 selection:text-white">
+    <%= render "layouts/navbar" %>
+    <main class="mx-auto flex-grow w-full max-w-7xl px-4 py-6 sm:px-6 md:px-8 md:py-10">
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
+  </body>
+</html>
